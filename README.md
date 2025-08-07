@@ -1,10 +1,16 @@
 # Google SecOps Playbook Blocks for Gemini-Assisted Case Handling
 
-Unofficial set of Google SecOps SOAR playbook blocks that leverage Gemini on Vertex AI to assist with alert/case handling
+Unofficial set of Google SecOps SOAR playbook blocks that leverage Gemini on Vertex AI to assist with alert/case handling.
+
+**Installation Instructions**
+
+To import the blocks to your SecOps instance, download the appropriate `.zip` file from the Releases page and import that in to the Playbook interface. For rendering the results as a widget, use the link in each block's documentation below to get the relevant HTML code.
 
 
 ## AI Alert Triage
-Triage an alert as True/False Positive leveraging SecOps knowledge, including: Alert details, UDM query resuts, GTI enrichment, and similar case history. Details on the design of this playbook are available in [this Medium post](https://medium.com/@cloudymike/implementing-custom-ai-investigators-in-vertex-ai-for-google-secops-51fb0baaf458).
+Triage an alert as True/False Positive leveraging SecOps knowledge, including: Alert details, UDM query resuts, GTI enrichment, and similar case history. Details on the design of this playbook block are available in [this Medium post](https://medium.com/@cloudymike/implementing-custom-ai-investigators-in-vertex-ai-for-google-secops-51fb0baaf458).
+
+Download [here](https://github.com/pilot006/google-secops-playbook-blocks-vertex-ai/releases/tag/ai-triage-v1)
 
 
 **Integrations Required**
