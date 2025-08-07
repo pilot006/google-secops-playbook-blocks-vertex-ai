@@ -1,0 +1,738 @@
+{
+    "CategoryName": "New Folder",
+    "OverviewTemplatesDetails": [],
+    "WidgetTemplates": [],
+    "Definition": {
+        "Identifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+        "IsEnable": true,
+        "Version": 0,
+        "IsArchived": false,
+        "IsAutomatic": true,
+        "Name": "AI Alert Triage",
+        "Category": 4,
+        "Description": "Uses knowledge from SecOps, like intel, case history, and event searches to use Gemini to do initial alert triage",
+        "Priority": 2,
+        "Creator": "5050644e-0c2a-472a-bcf9-f397f33366ca",
+        "VersionCreator": null,
+        "VersionComment": null,
+        "OriginalWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+        "TemplateName": null,
+        "PlaybookType": 1,
+        "IsDebugMode": false,
+        "DebugBaseAlertIdentifier": null,
+        "DebugAlertIdentifier": null,
+        "SimulationClone": false,
+        "DefaultAccessLevel": 2,
+        "CreationSource": 1,
+        "Steps": [
+            {
+                "Identifier": "0f01c1bd-a51d-449e-9b94-b314d67b4c08",
+                "OriginalStepIdentifier": "0f01c1bd-a51d-449e-9b94-b314d67b4c08",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "b9dead0c-2fa7-4af1-9069-456d4f724192"
+                ],
+                "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Output_1",
+                "IsAutomatic": true,
+                "Name": "Output",
+                "IsSkippable": false,
+                "Description": "",
+                "ActionProvider": "Flow",
+                "ActionName": "OutputAction",
+                "Type": 6,
+                "Integration": "Flow",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "0f01c1bd-a51d-449e-9b94-b314d67b4c08",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "NestedWorkflowOutput",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                "OriginalStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [],
+                "ParentStepIdentifier": "",
+                "PreviousResultCondition": null,
+                "InstanceName": "Get Original Alert JSON",
+                "IsAutomatic": true,
+                "Name": "Tools_Get Original Alert Json",
+                "IsSkippable": false,
+                "Description": "Retrieve the original alert JSON to be analyzed by AI",
+                "ActionProvider": "Scripts",
+                "ActionName": "Tools_Get Original Alert Json",
+                "Type": 0,
+                "Integration": "Tools",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "e0c16851-91ca-4279-80c1-ee4a8d96c1a9"
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "Tools_Get Original Alert Json"
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{}"
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "All entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                "OriginalStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "8fe584b4-2316-442b-aafc-a735825d0c15"
+                ],
+                "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Enrich with GTI Knowledge",
+                "IsAutomatic": true,
+                "Name": "GoogleThreatIntelligence_Enrich Entities",
+                "IsSkippable": false,
+                "Description": "Enrich entities with Google Threat Intel for use with AI-triage",
+                "ActionProvider": "Scripts",
+                "ActionName": "GoogleThreatIntelligence_Enrich Entities",
+                "Type": 0,
+                "Integration": "GoogleThreatIntelligence",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AsyncActionTimeout",
+                        "Value": "86400"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AsyncPollingInterval",
+                        "Value": "3600"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "af2c9ac1-e2e4-499a-b176-e67ddfd3add1"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": "{\"Enabled\":true,\"IntervalInSeconds\":30,\"NumberOfRetries\":10}"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "GoogleThreatIntelligence_Enrich Entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{\"Resubmit Entity\":false,\"Resubmit After (Days)\":\"30\",\"Sandbox\":\"VirusTotal Jujubox\",\"Retrieve Sandbox Analysis\":true,\"Fetch MITRE Details\":true,\"Lowest MITRE Technique Severity\":\"Medium\",\"Retrieve Comments\":true,\"Max Comments To Return\":\"10\"}"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "External entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                "OriginalStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "e771474b-45c5-410c-b371-fe25e7a892ba"
+                ],
+                "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Run AI-generated SIEM Query",
+                "IsAutomatic": true,
+                "Name": "GoogleChronicle_Execute UDM Query",
+                "IsSkippable": false,
+                "Description": "Run AI-generated query against SecOps SIEM",
+                "ActionProvider": "Scripts",
+                "ActionName": "GoogleChronicle_Execute UDM Query",
+                "Type": 0,
+                "Integration": "GoogleChronicle",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "f1809a91-8557-4b94-a110-ee80a3298ca1"
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "GoogleChronicle_Execute UDM Query"
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{\"Query\":\"[Gemini: Create UDM Query for Similar Events.JsonResult| \\\"text_content\\\"]\",\"Time Frame\":\"1 Hour Around Alert Time\",\"Start Time\":\"\",\"End Time\":\"\",\"Max Results To Return\":\"50\"}"
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "All entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "8fe584b4-2316-442b-aafc-a735825d0c15",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": true,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                "OriginalStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "e788fda3-d0bd-41ed-9fe4-a210d884e12b"
+                ],
+                "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Determine True Positive or False Positive",
+                "IsAutomatic": true,
+                "Name": "VertexAI_Execute Prompt",
+                "IsSkippable": false,
+                "Description": "Use all generated knowledge to determine false positive vs true positive",
+                "ActionProvider": "Scripts",
+                "ActionName": "VertexAI_Execute Prompt",
+                "Type": 0,
+                "Integration": "VertexAI",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "41fad322-38fa-4bcc-b852-7e786c7cd531"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": "{\"Enabled\":false,\"IntervalInSeconds\":30,\"NumberOfRetries\":1}"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "VertexAI_Execute Prompt"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{\"Model ID\":\"\",\"Publisher Name\":\"\",\"Text Prompt\":\"You are a cybersecurity analyst and you're running Google SecOps/Chronicle. You received the following event: [Get Original Alert JSON.JsonResult]\\n\\nYou then ran this query to search the SIEM for similar events: [Gemini: Create UDM Query for Similar Events.JsonResult| \\\"text_content\\\"]\\n\\nAfter that you ran the query you got these results: [Run AI-generated SIEM Query.JsonResult]\\n\\nYou then ran an enrichment against Google Threat Intelligence. You got these results: [Enrich with GTI Knowledge.JsonResult]\\n\\nYou also have access to the past 30 days of similar cases and how they were resolved here: [Get similar cases.JsonResult]\\n\\nUsing all of this data, you must respond in the following format:\\n- First, either AI_DETERMINATION:TRUE_POSITIVE or AI_DETERMINATION:FALSE_POSITIVE. You must use those exact values without spaces, no exceptions.\\n- Two new lines\\n- A detailed description of the analysis. It should be broken down by the analysis you did for each input data set and how that data was used in your determination. This analysis should be formatted as markdown, with bullet points under each analysis you did with your details.\\n- For the SIEM query analysis, include the actual query that was run: [Gemini: Create UDM Query for Similar Events.JsonResult| \\\"text_content\\\"]\\n\\nYour determination should use the following guidance:\\n- If there is strong evidence of similar alerts being closed at \\\"not malicious,\\\" that should drive the alert to likely be a false positive. If you determine it to be a false positive, please note it's due to this.\\n- For any alerts related to network connections, if you have evidence that the connection was blocked, note that and mark it a FALSE_POSITIVE\",\"Temperature\":\"\",\"Candidate Count\":\"\",\"Response MIME type\":\"text/plain\",\"Response Schema\":\"\",\"Max Input Tokens\":\"\",\"Max Output Tokens\":\"\"}"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "All entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "b9dead0c-2fa7-4af1-9069-456d4f724192",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                "OriginalStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "6d0c3ecd-fb0b-4073-8624-86d6ebb74266"
+                ],
+                "ParentStepIdentifier": "6d0c3ecd-fb0b-4073-8624-86d6ebb74266",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Gemini: Create UDM Query for Similar Events",
+                "IsAutomatic": true,
+                "Name": "VertexAI_Execute Prompt",
+                "IsSkippable": false,
+                "Description": "AI generate a UDM query to search for similar events",
+                "ActionProvider": "Scripts",
+                "ActionName": "VertexAI_Execute Prompt",
+                "Type": 0,
+                "Integration": "VertexAI",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "41fad322-38fa-4bcc-b852-7e786c7cd531"
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "VertexAI_Execute Prompt"
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{\"Model ID\":\"\",\"Publisher Name\":\"\",\"Text Prompt\":\"You are a cybersecurity analyst and you're running Google SecOps/Chronicle. You received the following event: [Get Original Alert JSON.JsonResult]\\n\\nBased upon this event, create a UDM query that is broad enough to capture other events, but looks for similar activity within Google SecOps. The query should only use the following \\\"grouped\\\" fields, separated by \\\"or\\\" statements. The available grouped fields, along with the description of the data it supports is below. Reference this when building your query:\\n\\n\\nip - An IP address\\nhash - Any file has that is md5, sha1, or sha256\\nuser - a non email-address username\\nemail - An e-mail address\\ndomain - A domain name like \\\"google.com\\\"\\nhostname - An asset's/device's hostname\\n\\n\\nAn example of a query could be something like, but do not use these values in your query:\\n\\nip = \\\"8.8.8.8\\\" or user = \\\"IdaBear\\\"\\n\\n\\nYou MUST only return the actual UDM query with no additional text. \",\"Temperature\":\"\",\"Candidate Count\":\"\",\"Response MIME type\":\"text/plain\",\"Response Schema\":\"\",\"Max Input Tokens\":\"\",\"Max Output Tokens\":\"\"}"
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "All entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "e771474b-45c5-410c-b371-fe25e7a892ba",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": null,
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            },
+            {
+                "Identifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                "OriginalStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "ParentStepIdentifiers": [
+                    "719e4486-6d47-4ce2-b4d4-29f557f99611"
+                ],
+                "ParentStepIdentifier": "719e4486-6d47-4ce2-b4d4-29f557f99611",
+                "PreviousResultCondition": "{}",
+                "InstanceName": "Get similar cases",
+                "IsAutomatic": true,
+                "Name": "Siemplify_Get Similar Cases",
+                "IsSkippable": false,
+                "Description": "Get similar cases for the past 90 days",
+                "ActionProvider": "Scripts",
+                "ActionName": "Siemplify_Get Similar Cases",
+                "Type": 0,
+                "Integration": "Siemplify",
+                "Parameters": [
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "AssignedUsers",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "DynamicInjectionInstancePlaceholder",
+                        "Value": ""
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FallbackIntegrationInstance",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "FetchInstanceByName",
+                        "Value": "false"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "HasApprovalLink",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "IntegrationInstance",
+                        "Value": "d12b0f00-f883-4c78-bc44-5d44a89d6df0"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "MessageToAssignee",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "PendingActionTimeout",
+                        "Value": null
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "RetryConfiguration",
+                        "Value": "{\"Enabled\":false,\"IntervalInSeconds\":30,\"NumberOfRetries\":1}"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptName",
+                        "Value": "Siemplify_Get Similar Cases"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "ScriptParametersEntityFields",
+                        "Value": "{\"Rule Generator\":true,\"Port\":true,\"Category Outcome\":true,\"Entity Identifier\":true,\"Days Back\":\"90\",\"Include Open Cases\":true,\"Include Closed Cases\":true}"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "SelectedScopeName",
+                        "Value": "All entities"
+                    },
+                    {
+                        "ParentStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                        "ParentWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                        "Name": "UseEntitiesLoopScope",
+                        "Value": null
+                    }
+                ],
+                "AutoSkipOnFailure": false,
+                "IsDebugMockData": false,
+                "StepDebugData": {
+                    "CreationTimeUnixTimeInMs": 0,
+                    "ModificationTimeUnixTimeInMs": 0,
+                    "OriginalWorkflowIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                    "OriginalStepIdentifier": "e788fda3-d0bd-41ed-9fe4-a210d884e12b",
+                    "ResultValue": "",
+                    "ResultJson": "",
+                    "ScopeEntitiesEnrichmentData": [],
+                    "ScopeEntitiesEnrichmentDataJson": "[]"
+                },
+                "ParentStepContainerId": null,
+                "IsTouchedByAi": false,
+                "StartLoopStepIdentifier": null,
+                "ParallelActions": []
+            }
+        ],
+        "Triggers": [
+            {
+                "Identifier": "d0c1768a-d5d6-43a0-ad25-ac819076b42a",
+                "IsEnabled": true,
+                "DefinitionIdentifier": "da19af63-e03c-4bc8-aaeb-1352701c708e",
+                "Type": 11,
+                "WorkflowName": null,
+                "LogicalOperator": 0,
+                "Conditions": [],
+                "Environments": [
+                    "Default Environment"
+                ]
+            }
+        ],
+        "OverviewTemplates": [],
+        "Permissions": [],
+        "Environments": [
+            "Default Environment"
+        ]
+    }
+}
