@@ -18,6 +18,8 @@ Triage an alert as True/False Positive leveraging SecOps knowledge, including: A
 
 **HTML Widget Source Code**
 
+Source code available [here](https://raw.githubusercontent.com/pilot006/google-secops-playbook-blocks-vertex-ai/refs/heads/main/html_widget_code/ai-triage.html). Paste this in to your HTML widget code section to render results as a widget in an alert view.
+
 **Example Output**
 
 ![AI Triage](/examples/ai-alert-triage.png?raw=true)
