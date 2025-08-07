@@ -15,3 +15,9 @@ Triage an alert as True/False Positive leveraging SecOps knowledge, including: A
 | [Google Threat Intelligence](https://cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-threat-intelligence) | Enrich entities with GTI intel |
 | [Tools](https://cloud.google.com/chronicle/docs/soar/marketplace/power-ups/tools) | Get original alert JSON |
 | [Siemplify](https://cloud.google.com/chronicle/docs/soar/marketplace-integrations/siemplify) | Get similar cases|
+
+**HTML Widget Source Code**
+
+**Example Output**
+
+![AI Triage](/examples/ai-alert-triage.png?raw=true)
